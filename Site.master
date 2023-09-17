@@ -1,0 +1,87 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="JavaScript1.2" src="Scripts/stm31.js"></script>
+<script language="javascript">
+    function delete_cont(obj) {
+        if (confirm("You are deleting " + obj + ". Are you sure?") == true) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    function Cancel_pub_exam() {
+        if (confirm("Do you want to cancel publishing exam?") == true) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+        <asp:Table ID="Tb_flags" runat="server" Width="100%">
+        <asp:TableRow>
+        <asp:TableCell HorizontalAlign="Left">
+        <asp:Image ID="Image_Turkey" Width="48" Height="35" runat="server" ImageUrl="~/icons/Turkey.png" />
+        </asp:TableCell>
+        <asp:TableCell HorizontalAlign="Right">        
+        <asp:Image ID="Image_Afghanistan" Width="48" Height="35" runat="server" ImageUrl="~/icons/Afghanistan.png" />
+        </asp:TableCell>
+        </asp:TableRow>
+        </asp:Table>
+            <div class="loginDisplay">
+            <asp:Table ID="Tbl_user_knowledge" runat="server" Width="100%">
+            <asp:TableRow>
+            <asp:TableCell HorizontalAlign="Left" VerticalAlign="Middle">
+            <h1>
+                    QUESTION BANK APPLICATION
+                </h1>
+            </asp:TableCell>
+            <asp:TableCell>
+            <asp:Label ID="lbl_online_user" runat="server" Text=""></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+            <asp:Label ID="Lbl_user_real_name" runat="server"></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell HorizontalAlign="Right">
+            [
+                <asp:Label ID="lbl_login" runat="server"><a href="~/Account/Login.aspx" id="HeadLoginStatus"
+                    runat="server">Log in</a></asp:Label>
+                ]
+            </asp:TableCell>
+            </asp:TableRow>            
+            <asp:TableRow>
+            <asp:TableCell ColumnSpan="4" HorizontalAlign="Right">
+            <asp:Label ID="Lbl_authorization" runat="server" Text="Your Authorization : "></asp:Label>
+            </asp:TableCell>
+            </asp:TableRow>
+            </asp:Table> 
+            </div>          
+        </div>
+            <div>
+             <asp:Label ID="lbl_menujs" runat="server"></asp:Label>
+             </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+           <div class="footer">
+<asp:Label ID="Lbl_software_content" runat="server">©2014 This software is developed by Turkish Adviser Team</asp:Label>
+<asp:Image ID="Image_Turkish_Flag" runat="server" ImageUrl="~/icons/dalgalanan_bayrak.gif" Width="32" Height="32" />
+    </div>
+    </div>
+    </form>
+</body>
+</html>

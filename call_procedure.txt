@@ -1,0 +1,2 @@
+call pro_sel_t_question(1,6,1,@po_out);
+select @po_out;
